@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кир Сорокин - создание сайтов для вашего бизнеса</title>
+
+    <link rel="stylesheet" href="style/index.css">
+
+    <script src="js/jquery-3.7.1.min.js" defer></script>
+    <script src="js/swiper-bundle.min.js" defer></script>
+    <script src="js/index.js" defer></script>
 </head>
-<body>
-    <header class="header">
-        <div class="container">
-            <img class="header__logo"src="" alt="Логотип Кира Сорокина" >
+<body class="page">
+    <header class="page__header header">
+        <div class="container header__container">
+          <!--
+          будет по умолчанию предлагать сохраняться как webp
+          <a  href="img/logo.webp" download="фото Кира" class="present__photo">
+            <picture>
+              <source srcset="img/logo.webp" type="image/webp">
+            <img class="header__logo" src="img/logo.svg" alt="Логотип Кира Сорокина" >
+            </picture>
+          </a>
+          -->
+            <img class="header__logo" src="img/logo.svg" alt="Логотип Кира Сорокина" >
             <address class="header__contacts contacts">
                 <ul class="contacts__list">
                     <li class="contacts__item">
-                        <p class="contacts__head">Телефон</p>
+                        <p class="contacts__head contacts__head_social">Телефон</p>
                         <a href="tel:+79373838323" class="contacts__link">+7 (937) 383 83-23
                         </a>
                     </li>
@@ -47,8 +62,8 @@
 
     <main>
         <section class="present">
-            <div class="container">
-                <img src="" alt="Фотография Кира Сорокина" class="present__photo">
+            <div class="container present__container">
+                <img src="img/photo.jpg" alt="Фотография Кира Сорокина" class="present__photo">
     
                 <div class="present__content">
                     <hgroup class="present__group-title">
@@ -56,7 +71,7 @@
                         <h2 class="present__subtitle">Разработчик сайтов</h2>
                     </hgroup>
     
-                    <p class="present__description">Меня зовут Кир Сорокин, я&nbsp;разработчик сайтов с&nbsp;опытом 1 год
+                    <p class="present__description">Меня зовут Кир Сорокин, я&nbsp;разработчик сайтов с&nbsp;опытом 1&nbsp;год
                     </p> 
                     
                     <button class="present__order-btn">Заказать</button>
@@ -82,12 +97,12 @@
     
         <section class="porfolio">
             <div class="container">
-                <h2 class="poryfolio__title">Портфолио</h2>
-                <div class="portfolio__slider">
-                    <ul class="portfolio__list">
-                        <li class="portfolio__item">
+                <h2 class="portfolio__title">Портфолио</h2>
+                <div class="portfolio__slider swiper">
+                    <ul class="portfolio__list swiper-wrapper">
+                        <li class="portfolio__item swiper-slide">
                             <article class="card">
-                                <img src="" alt="" class="card__picture">
+                                <img src="img/cinema.jpg" alt="" class="card__picture">
                                 <p class="card__data">
                                     <span class="card__client">Клиент: Cinema</span>
                                     <time class="card__date" datetime="2020">год: 2021</time>
@@ -96,9 +111,9 @@
                             </article>
                         </li>
 
-                        <li class="portfolio_item">
+                        <li class="portfolio_item swiper-slide">
                             <article class="card">
-                                <img src="" alt="" class="card__picture">
+                                <img src="img/iphone.jpg" alt="" class="card__picture">
                                 <p class="card__data">
                                     <span class="card__client">Клиент: Full Apple</span>
                                     <time class="card__date" datetime="2020">год: 2020</time>
@@ -107,9 +122,9 @@
                             </article>
                         </li>
 
-                        <li class="portfolio_item">
+                        <li class="portfolio_item swiper-slide">
                             <article class="card">
-                                <img src="" alt="" class="card__picture">
+                                <img src="img/dom.jpg" alt="" class="card__picture">
                                 <p class="card__data">
                                     <span class="card__client">Клиент: Game Over</span>
                                     <time class="card__date" datetime="2020">год: 2019</time>
@@ -118,9 +133,9 @@
                             </article>
                         </li>
 
-                        <li class="portfolio_item">
+                        <li class="portfolio_item swiper-slide">
                             <article class="card">
-                                <img src="" alt="" class="card__picture">
+                                <img src="img/go.jpg" alt="" class="card__picture">
                                 <p class="card__data">
                                     <span class="card__client">Клиент: Friendly House</span>
                                     <time class="card__date" datetime="2020">год: 2020</time>
@@ -129,22 +144,79 @@
                             </article>
                         </li>
 
-                        <li class="portfolio_item">
+                        <li class="portfolio_item swiper-slide">
                             <article class="card">
-                                <img src="" alt="" class="card__picture">
+                                <img src="img/friendly_house.jpg" alt="" class="card__picture">
                                 <p class="card__data">
                                     <span class="card__client">Клиент: ItalGroup boutique</span>
                                     <time class="card__date" datetime="2020">год: 2020</time>
                                 </p>
                                 <h3 class="card__title">Многостраничный сайт</h3>
                             </article>
-                        </li>
+                        </li> 
 
                     </ul>
+                    <button class="portfolio__arrow portfolio__arrow_left"></button>
+                    <button class="portfolio__arrow portfolio__arrow_right"></button>
+
                 </div>
             </div>
         </section>
     </main>
+
+    <div class="page__overlay page__overlay_modal">
+        <div class="modal">
+            <h2 class="modal__title">Заполните форму и я свяжусь с вами</h2>
+            <form class="modal__form callback" action="">
+                <fieldset class="callback__group">
+                    <legend class="visually-hidden">Личные данные</legend>
+
+                    <label class="callback__label" for="">
+                        <span class="callback__label-text">ФИО</span>
+                        <input class="callback__input" type="text" name="bio" placeholder="Введите ваше ФИО">                 
+                    </label>
+    
+                    <label class="callback__label" for="">
+                        <span class="callback__label-text">Телефон</span>
+                        <input class="callback__input" type="text" name="phone" placeholder="Введите ваш номер телефона">                 
+                    </label>
+                </fieldset>
+
+                <fieldset class="callback__group connect">
+                    <legend class="connect__title">Где удобнее связаться?</legend>
+                    <label for="" class="connect__label">
+                        <input class="connect_radio" type="radio" name="connect" value="telegram">
+                        <span class="connect__text">Телеграмм</span>
+                    </label>
+
+                    <label for="" class="connect__label">
+                        <input class="connect_radio" type="radio" name="connect" value="whatsup">
+                        <span class="connect__text">Whatsup</span>
+                    </label>
+
+                    <label for="" class="connect__label">
+                        <input class="connect_radio" type="radio" name="connect" value="call">
+                        <span class="connect__text">Позвонить</span>
+                    </label>
+
+                    <label for="" class="connect__label">
+                        <input class="connect_radio" type="radio" name="connect" value="viber">
+                        <span class="connect__text">Viber</span>
+                    </label>
+                </fieldset>
+
+                <button type="submit" class="callback__btn">Отправить</button>
+            </form>
+
+            <button type="submit" class="modal__close">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="29.1681" height="1.94454" rx="0.972271" transform="matrix(0.707106 -0.707107 0.707106 0.707107 0 20.625)" fill="#282626"/>
+                    <rect width="29.1681" height="1.94454" rx="0.972271" transform="matrix(0.707106 0.707107 -0.707106 0.707107 1.375 0)" fill="#282626"/>
+                    </svg>
+                    
+            </button>
+        </div>
+    </div>
     
 </body>
 </html>

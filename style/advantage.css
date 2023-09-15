@@ -1,0 +1,117 @@
+.advantage__title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.advantage__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.advantage__item {
+    /* элемент стремится к этому размеру
+    если он может занимать 290, то он будет их занимать */
+    flex-basis: 290px;
+    min-height: 61px;
+    font-size: 14px;
+    line-height: 1.4;
+
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 61px;
+    padding: 10px 10px 10px 81px;
+}
+
+.advantage__item_stack {
+    background-image: url("../img/stack.svg");
+}
+
+.advantage__item_mockup {
+    background-image: url("../img/mockup.svg");
+}
+
+.advantage__item_inclusive {
+    background-image: url("../img/inclusive.svg");
+}
+
+.advantage__item_adapt {
+    background-image: url("../img/adapt.svg");
+}
+
+.advantage__item_clear {
+    background-image: url("../img/clear.svg");
+}
+
+.advantage__item_copyright {
+    background-image: url("../img/copyright.svg");
+}
+
+@media (min-width: 480px) {
+    .advantage__list {
+        gap: 40px;
+    }
+
+    .advantage__title {
+        font-size: 40px;
+    }
+
+    .advantage__item {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    .advantage__item_stack {
+        order: 1;
+    }
+
+    .advantage__item_mockup {
+        order: 3;
+    }
+
+    .advantage__item_inclusive {
+        order: 5;
+    }
+
+    .advantage__item_adapt {
+        order: 2;
+    }
+
+    .advantage__item_clear {
+        order: 54;
+    }
+
+    .advantage__item_copyright {
+        order: 6;
+    }
+
+
+    .advantage__title {
+        margin-bottom: 50px;
+    }
+
+    .advantage__list {
+        justify-content: space-between;
+        gap: 80px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .advantage__title {
+        font-size: 50px;
+        margin-bottom: 80px;
+    }
+
+    .advantage__list {
+        gap: 100px;
+    }
+
+    .advantage__item {
+        font-size: 18px;
+    }
+}
